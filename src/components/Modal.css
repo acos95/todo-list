@@ -1,0 +1,53 @@
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    gap: 24px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 400px;
+    
+
+    background-color: #2B2C2E;
+    border-radius: 24px;
+}
+
+.txt-area {
+    font-size: 24px;
+    background-color: #2B2C2E;
+    color: white;
+    height: 155px;
+    width: 429px;
+    resize: none;
+    border: none;
+    outline: 0;
+}
+
+.save-button {
+    font-size: 24px;
+    font-family: "Inter";
+    color: #01001E;
+    background-color: #716FB2;
+    padding: 8px 32px;
+    box-shadow: 4px 12px 24px rgba(0, 0, 0, 0.25);
+    border-radius: 32px;
+    border: 0;
+    cursor: pointer;
+}
+
+.modal-background {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
