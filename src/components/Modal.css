@@ -26,7 +26,7 @@
     width: 429px;
     resize: none;
     border: none;
-    outline: 0;
+    outline: none;
 }
 
 .save-button {
