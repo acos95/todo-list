@@ -56,3 +56,8 @@ h1 {
   width: 50vw;
   overflow-y: scroll;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
+
