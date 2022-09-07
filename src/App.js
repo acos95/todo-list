@@ -11,13 +11,16 @@ const App = () => {
   const [todoList, setTodoList] = useState([]);
   const [newTask, setNewTask] = useState("");
   const [showModal, setShowModal] = useState(false);
+  const [hashKey, setHashKey] = useState(0);
 
   const addTask = () => {
     const task = {
-      id: todoList.length === 0 ? 1 : todoList[todoList.length - 1].id + 1,
+      //id: todoList.length === 0 ? 1 : todoList[todoList.length - 1].id + 1, issue with keys when deleting task
+      id: todoList.length === 0 ? 1 : hashKey + 1,
       taskName: newTask,
       completed: false,
     };
+    setHashKey(hashKey + 1);
     setTodoList(task.taskName !== "" ? [...todoList, task] : todoList);
   };
 
@@ -26,26 +29,28 @@ const App = () => {
   };
 
   const completeTask = (id) => {
-    /*
     const array = todoList;
     //index of element to move to the end of the array
     const index = array.findIndex((i) => i.id === id);
 
     const element = array.splice(index, 1)[0];
     element.completed = !element.completed;
-    console.log(element, array);
+    console.log(element, array, "prima");
 
-    if (element.completed) {
-      array.splice(todoList.length, 0, element);
-    } else {
+    if (element.completed === true) {
+      array.splice(array.length, 0, element);
+    } else if (element.completed === false) {
       const i = array.findLastIndex((i) => i.completed === false);
       if (i !== -1) {
         array.splice(i + 1, 0, element);
+      } else {
+        array.splice(array.length, 0, element);
       }
     }
 
-    setTodoList(array);*/
-
+    setTodoList([...array]);
+    console.log(element, array, "dopo");
+    /*
     setTodoList(
       todoList.map((task) => {
         if (task.id === id) {
@@ -54,7 +59,7 @@ const App = () => {
           return task;
         }
       })
-    );
+    );*/
   };
 
   const closeModal = () => {
