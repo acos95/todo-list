@@ -35,7 +35,6 @@ const App = () => {
 
     const element = array.splice(index, 1)[0];
     element.completed = !element.completed;
-    console.log(element, array, "prima");
 
     if (element.completed === true) {
       array.splice(array.length, 0, element);
@@ -49,7 +48,7 @@ const App = () => {
     }
 
     setTodoList([...array]);
-    console.log(element, array, "dopo");
+
     /*
     setTodoList(
       todoList.map((task) => {
